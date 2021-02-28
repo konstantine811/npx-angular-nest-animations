@@ -8,16 +8,20 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
+    "target": "ES6",
+    "module": "ESNext",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "allowJs": true,
     "paths": {
       "@npx-angular-nest-drum/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
-      ]
+      ],
+      "@api-server/*": ["apps/api/src/*"],
+      "@app-brummer/*": ["apps/brummer/src/*"],
+      "@app-brummer-core/*": ["apps/brummer/src/app/core/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

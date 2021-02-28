@@ -5,10 +5,10 @@
       "projectType": "application",
       "root": "apps/brummer",
       "sourceRoot": "apps/brummer/src",
-      "prefix": "npx-angular-nest-drum",
+      "prefix": "app-brummer",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/apps/brummer",
             "index": "apps/brummer/src/index.html",
@@ -21,7 +21,13 @@
               "apps/brummer/src/assets"
             ],
             "styles": ["apps/brummer/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "./custom-webpack.config.js"
+            },
+            "allowedCommonJsDependencies": [
+              "physijs"
+            ]
           },
           "configurations": {
             "production": {
@@ -54,7 +60,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "brummer:build",
             "proxyConfig": "apps/brummer/proxy.conf.json"

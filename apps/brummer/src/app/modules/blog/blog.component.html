@@ -1,0 +1,17 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea
+      matInput
+      [(ngModel)]="value"
+      placeholder="Ex. It makes me feel..."
+      name="textarea"
+    ></textarea>
+  </mat-form-field>
+  <button mat-button (click)="onClickBut()">Repost</button>
+</form>
+<ckeditor
+  [editor]="Editor"
+  (change)="onChange($event)"
+  data="<p>Hello, world!</p>"
+></ckeditor>

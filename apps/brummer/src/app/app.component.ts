@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@npx-angular-nest-drum/api-interfaces';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-  selector: 'npx-angular-nest-drum-root',
+  selector: 'app-brummer-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  @HostBinding('style.height') height = '100%';
+  @HostBinding('style.width') width = '100%';
+  @HostBinding('style.display') display = 'block';
+
+  constructor() {}
 }

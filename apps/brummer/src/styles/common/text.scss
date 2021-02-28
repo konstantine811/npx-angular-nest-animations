@@ -1,0 +1,22 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.white {
+  color: #a8aac3;
+}
+
+h1 {
+  &.lg {
+    font-size: 80px;
+    font-weight: 100;
+    letter-spacing: 10px;
+  }
+}
