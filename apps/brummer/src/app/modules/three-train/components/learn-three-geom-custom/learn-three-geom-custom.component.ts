@@ -2,10 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 // libs
 import * as THREE from 'three';
 import { SceneUtils } from 'three/examples/jsm/utils/SceneUtils';
-import * as Physi from 'physijs';
 import * as dat from 'dat.gui';
 // helpers
-import { InitPhysiScene } from '../../helpers/init-physi-scene';
 
 @Component({
   selector: 'app-brummer-learn-three-geom-custom',
@@ -14,7 +12,6 @@ import { InitPhysiScene } from '../../helpers/init-physi-scene';
 })
 export class LearnThreeGeomCustomComponent implements OnInit, AfterViewInit {
   wrapEl: HTMLBaseElement;
-  init: InitPhysiScene;
   gui: dat;
   controlPoints: [
     {
@@ -120,7 +117,7 @@ export class LearnThreeGeomCustomComponent implements OnInit, AfterViewInit {
       this.controls.positionY,
       this.controls.positionZ
     );
-    this.init.scene.add(this.mesh);
+    /* this.init.scene.add(this.mesh); */
   }
 
   cloneGeom = () => {
@@ -142,8 +139,8 @@ export class LearnThreeGeomCustomComponent implements OnInit, AfterViewInit {
     mesh.translateZ(5);
     mesh.translateY(2);
     mesh.name = 'clone';
-    this.init.scene.remove(this.init.scene.getObjectByName('clone'));
-    this.init.scene.add(mesh);
+    /* this.init.scene.remove(this.init.scene.getObjectByName('clone'));
+    this.init.scene.add(mesh); */
   };
 
   renderFun() {
@@ -223,7 +220,7 @@ export class LearnThreeGeomCustomComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.wrapEl = this.el.nativeElement;
-    this.init = new InitPhysiScene(this.wrapEl, this.renderFun.bind(this));
+    /* this.init = new InitPhysiScene(this.wrapEl, this.renderFun.bind(this)); */
     /* this.gui = new dat.GUI();
     this.addObjectToScene();
     this.gui.add({ clone: this.cloneGeom }, 'clone');
