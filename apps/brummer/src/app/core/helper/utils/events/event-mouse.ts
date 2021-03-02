@@ -1,6 +1,12 @@
+export interface IMouseCoord {
+  x: number;
+  y: number;
+}
+
+
 export class EventMouse {
   private el: HTMLElement;
-  private _mouse = {
+  private _mouse: IMouseCoord  = {
     x: 0,
     y: 0,
   };
@@ -13,7 +19,7 @@ export class EventMouse {
     return this._mouse;
   }
 
-  onMousemove(e: MouseEvent) {
+  private onMousemove(e: MouseEvent) {
     let x, y;
     if (e.pageX || e.pageY) {
       x = e.pageX;

@@ -6,6 +6,7 @@ import { TrainShaderComponent } from './components/train-shader/train-shader.com
 import { JellyEffectComponent } from './components/jelly-effect/jelly-effect.component';
 import { TrainAnimationComponent } from './components/train-animation/train-animation.component';
 import { TxtWaterRevealComponent } from './components/txt-water-reveal/txt-water-reveal.component';
+import { LineDrawComponent } from './components/line-draw/line-draw.component';
 @NgModule({
   imports: [],
   declarations: [
@@ -15,6 +16,7 @@ import { TxtWaterRevealComponent } from './components/txt-water-reveal/txt-water
     JellyEffectComponent,
     TrainAnimationComponent,
     TxtWaterRevealComponent,
+    LineDrawComponent,
   ],
   exports: [
     SimpleBufferGeometryComponent,
@@ -23,6 +25,7 @@ import { TxtWaterRevealComponent } from './components/txt-water-reveal/txt-water
     JellyEffectComponent,
     TrainAnimationComponent,
     TxtWaterRevealComponent,
+    LineDrawComponent,
   ],
 })
 export class SharedModule {}
